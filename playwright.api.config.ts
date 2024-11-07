@@ -1,12 +1,4 @@
 import { defineConfig, devices } from '@playwright/test';
-require('dotenv').config()
-
-let environemnt = process.env.environment, url;
-
-if(environemnt === 'prod')
-  url = 'https://www.google.com/';
-else
-  url = 'https://www.amazon.com/'
 
 /**
  * Read environment variables from file.
@@ -20,7 +12,7 @@ else
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './api',
+  testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
