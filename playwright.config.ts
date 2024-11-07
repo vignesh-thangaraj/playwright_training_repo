@@ -1,4 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
+require('dotenv').config()
+
+let environemnt = process.env.environment, url;
+
+if(environemnt === 'prod')
+  url = 'https://www.google.com/';
+else
+  url = 'https://www.amazon.com/'
 
 /**
  * Read environment variables from file.
@@ -26,12 +34,13 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://127.0.0.1:3000',
+    baseURL: url,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
-  timeout: 20 * 1000,
+  timeout: 5 * 1000,
+  
   /* Configure projects for major browsers */
   projects: [
     {
