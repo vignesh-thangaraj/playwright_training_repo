@@ -15,13 +15,13 @@ interface userResponse {
 }
 
 
-test.describe('Flipkart APi test', () =>{
-    test('landing on user profile page', async ({ request })=>{
+test.describe('APi test', () =>{
+    test('assert api tests with data and status code', async ({ request })=>{
         const randomuser = await request.get('https://randomuser.me/api/')
         const response: randomUserReponse = await randomuser.json()
         expect(randomuser.status()).toBe(200)
         // expect(response['results'][0]['a']).toBe('male')
-        // expect(response.results[0].gender).toBe('male')
+        expect(response.results[0].gender).toBe('male')
         const lambdatestRequest = await request.post(`https://auth.lambdatest.com/api/login`, {
             headers:{
                 "content-type": "application/json"
@@ -31,6 +31,6 @@ test.describe('Flipkart APi test', () =>{
                 "password": "emailemail"
             }
           });
-          expect(lambdatestRequest.status()).toBe(422)
+          expect(lambdatestRequest.status()).toBe(200)
     })
 })

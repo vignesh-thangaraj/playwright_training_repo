@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "playwright training repo",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "headed-firefox": "npx playwright test --project firefox --ui --headed",
+    "ci": "npx playwright test",
+    "headless-chrome": "npx playwright test --project chromium --ui --headed",
+    "show-report": "npx playwright show-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
