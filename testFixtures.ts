@@ -10,9 +10,5 @@ export const test = base.extend<{ homePage: HomePage, searchPage: SearchPage }>(
     searchPage: async ({ page}, use) => {
         const searchPage = new SearchPage(page);
         await use(searchPage);
-    },
-    page: async ({ baseURL, page }, use) => {
-        await page.goto(baseURL || '');
-        await use(page);
-      },
+    }
   });

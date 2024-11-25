@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "headed-firefox": "npx playwright test --project firefox --ui --headed",
-    "ci": "npx playwright test",
+    "run-smoke": "npx playwright test --grep @smoke",
+    "run-regression": "npx playwright test --grep @regression",
     "headless-chrome": "npx playwright test --project chromium --ui --headed",
     "show-report": "npx playwright show-report"
   },
