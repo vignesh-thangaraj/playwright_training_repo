@@ -8,7 +8,8 @@
     "run-smoke": "npx playwright test --grep @smoke",
     "run-regression": "npx playwright test --grep @regression",
     "headless-chrome": "npx playwright test --project chromium --ui --headed",
-    "show-report": "npx playwright show-report"
+    "show-report": "npx playwright show-report",
+    "ci": "npx playwright test --project firefox"
   },
   "keywords": [],
   "author": "",
