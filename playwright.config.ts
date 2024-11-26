@@ -24,7 +24,7 @@ url =  environemnt === 'prod' ? 'https://www.google.com/' : 'https://www.amazon.
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './api',
+  testDir: './simpleapi',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
