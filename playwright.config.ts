@@ -39,8 +39,8 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'https://www.amazon.com/',
-    video: 'off',
-    screenshot: 'off',
+    video: 'on',
+    screenshot: 'on',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
@@ -48,10 +48,10 @@ export default defineConfig({
   
   /* Configure projects for major browsers */
   projects: [
-    // {
-    //   name: 'chromium',
-    //   use: { ...devices[''] },
-    // },
+    {
+      name: 'chromium',
+      use: { ...devices[''] },
+    },
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
